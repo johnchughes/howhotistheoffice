@@ -34,7 +34,7 @@ function App() {
 
   if (reading == null) {
     return (
-      <div>Initial Fetch</div>
+      <div>figuring out the temp ... </div>
     );
   }
 
@@ -43,11 +43,9 @@ function App() {
       <div className='App-header' >
         <h1>How hot is Johns office</h1>
         <div className='temperature' style={{ backgroundColor: colour }}>
-          <h1>{reading.temperature}</h1>
+          <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>
-      </div>
-
-      
+      </div>  
     </div>
   );
 }
