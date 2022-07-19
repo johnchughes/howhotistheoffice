@@ -41,7 +41,7 @@ function App() {
   return (
     <div className='App'>
       <div className='App-header' >
-        <h1>How hot is Johns office</h1>
+        <h1>How hot is John's office</h1>
         <div className='temperature' style={{ backgroundColor: colour }}>
           <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>
