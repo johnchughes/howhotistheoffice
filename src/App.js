@@ -1,6 +1,7 @@
 import './App.scss';
 import { useEffect, useState } from 'react';
 import *  as ColorScale from 'color-scales';
+import TemperatureChart from './TemperatureChart';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
 
   useEffect(() => {
     if(reading == null)return;
-    const colorScale = new ColorScale(1, 100, ["#2e59e6","#76cf29", "#d9d443", "#c74734"]);
+    const colorScale = new ColorScale(1, 100, ["#1d69b5","#1d69b5","#69b51d","#69b51d","#69b51d","#69b51d","#b5781d","#b5361d"]);
     const colourIndex = (reading.temperature/30)*100
     const hexValue = colorScale.getColor(colourIndex).toHexString(); // returns "rgba(127,127,127, 0.5)"
     setColour(hexValue);
@@ -46,9 +47,7 @@ function App() {
           <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>
       </section>
-      <section className='chart-section'>
-          this is graph space.
-      </section>
+      <TemperatureChart />
     </div>
   );
 }

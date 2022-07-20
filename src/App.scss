@@ -12,8 +12,10 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding:5vmin;
 
   &.chart-section {
+    justify-content: end;
     background: #282c34;
   }
 }
