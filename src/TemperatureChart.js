@@ -4,7 +4,7 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 
 const TemperatureChart = () => {
 
-    const { height, width } = useWindowDimensions();
+    const { height } = useWindowDimensions();
     const [data, setData] = useState(null);
 
     useEffect(() => {
