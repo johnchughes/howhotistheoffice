@@ -28,6 +28,7 @@ const TemperatureChart = () => {
     }
 
     return (
+
         <section className='chart-section'>
             <ResponsiveContainer width="95%" height={height*0.85} >
             <AreaChart  data={data}>
