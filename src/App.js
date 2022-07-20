@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { useEffect, useState } from 'react';
 import *  as ColorScale from 'color-scales';
 
@@ -40,12 +40,15 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='App-header' >
+      <section className='climate' >
         <h1>How hot is John's office</h1>
         <div className='temperature' style={{ backgroundColor: colour }}>
           <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>
-      </div>  
+      </section>
+      <section className='chart-section'>
+          this is graph space.
+      </section>
     </div>
   );
 }
