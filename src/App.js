@@ -23,13 +23,6 @@ function App() {
     }
   }, []);
 
-  const getColourForTemperature = (TemperatureChart) => {
-    const colorScale = new ColorScale(1, 100, ["#1d69b5","#1d69b5","#69b51d","#69b51d","#69b51d","#69b51d","#b5781d","#b5361d"]);
-    const colourIndex = (TemperatureChart/30)*100
-    const hexValue = colorScale.getColor(colourIndex).toHexString(); // returns "rgba(127,127,127, 0.5)"
-    return hexValue;
-  }
-
   useEffect(() => {
     if(reading == null)return;
     const colorScale = new ColorScale(1, 100, ["#1d69b5","#1d69b5","#69b51d","#69b51d","#69b51d","#69b51d","#b5781d","#b5361d"]);
@@ -47,7 +40,9 @@ function App() {
   return (
     <div className='App'>
       <section className='climate' >
-          <h1></h1>
+        <div className='title'>
+          <h1>&nbsp;</h1>
+        </div>
         <div className='temperature' style={{ backgroundColor: colour }}>
           <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>

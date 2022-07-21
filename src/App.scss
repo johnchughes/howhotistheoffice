@@ -31,16 +31,21 @@ section {
   font-size: calc(10px + 2vmin);
   color: white;
   
-
-  &> h1 {
-    color:#282c34;
+  .title {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    padding:0;
-    margin:0;
+
+    h1 {
+      color:#282c34;
+      padding:0;
+      margin:0;
+    }
   }
 
   .temperature {
     display: flex;
+    flex-grow: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -52,32 +57,34 @@ section {
       color:#ffffff;
     }
   }
-  
-}
 
-.today {
-  width:100%;
-  color:#282c34;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  ul {
-    list-style: none;
+  .today {
+    width:100%;
+    color:#282c34;
+    flex-grow: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding:0;
-    margin:0;
-
-    li {
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
       padding:0;
       margin:0;
-      width: 4%;
-      align-self: flex-end;
+      width: 100%;
+  
+      li {
+        padding:0;
+        margin:0;
+        border-left: 1px solid white;
+        border-right:1px solid white;
+        align-self: flex-end;
+      }
+  
     }
-
+    
   }
   
 }
+

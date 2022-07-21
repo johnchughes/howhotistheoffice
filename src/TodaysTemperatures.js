@@ -19,6 +19,7 @@ const TodaysTemperatures = () => {
 
         const today = new Date();
         const dateString = today.getFullYear() + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate();
+        //const dateString = "2022-07-20";
         fetch('https://fn-temps.azurewebsites.net/api/TempsForDay?code=YxXpJgCmX6bnkVNXWN78CtErhAcb8I_4_6btELeCh1iYAzFuYnycaQ==&date='+dateString)
             .then(response => response.json())
             .then(result => setData(result));
@@ -36,7 +37,7 @@ const TodaysTemperatures = () => {
 
     const DayBars = data.map((x,i) => {
         const liHeight = x.temperature +"vh";
-        const liWidth = width/24 + "%";
+        const liWidth = ((width/24)-2) + "px";
         return <li key={i} style={{height: liHeight, width: liWidth, backgroundColor: getColourForTemperature(x.temperature)}}></li>
       });
     
