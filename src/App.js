@@ -1,14 +1,12 @@
 import './App.scss';
 import { useEffect, useState } from 'react';
 import *  as ColorScale from 'color-scales';
-import TemperatureChart from './TemperatureChart';
+import TodaysTemperatures from './TodaysTemperatures';
 
 function App() {
 
   const [colour, setColour] = useState('yellow');
   const [reading, setReading] = useState(null);
- 
-  
  
   const fetchReadingData = () => {
     fetch('https://fn-temps.azurewebsites.net/api/temps?code=1sZNGbf5LX9o6eil2yQcgTKFGUPWv4klDBtfRfJqzcwEAzFuu7KIcw==')
@@ -25,6 +23,13 @@ function App() {
     }
   }, []);
 
+  const getColourForTemperature = (TemperatureChart) => {
+    const colorScale = new ColorScale(1, 100, ["#1d69b5","#1d69b5","#69b51d","#69b51d","#69b51d","#69b51d","#b5781d","#b5361d"]);
+    const colourIndex = (TemperatureChart/30)*100
+    const hexValue = colorScale.getColor(colourIndex).toHexString(); // returns "rgba(127,127,127, 0.5)"
+    return hexValue;
+  }
+
   useEffect(() => {
     if(reading == null)return;
     const colorScale = new ColorScale(1, 100, ["#1d69b5","#1d69b5","#69b51d","#69b51d","#69b51d","#69b51d","#b5781d","#b5361d"]);
@@ -35,19 +40,19 @@ function App() {
 
   if (reading == null) {
     return (
-      <div>figuring out the temp ... </div>
+      <div>its friday yeah!</div>
     );
   }
 
   return (
     <div className='App'>
       <section className='climate' >
-        <h1>How hot is John's office</h1>
+          <h1></h1>
         <div className='temperature' style={{ backgroundColor: colour }}>
           <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
         </div>
+        <TodaysTemperatures />
       </section>
-      <TemperatureChart />
     </div>
   );
 }

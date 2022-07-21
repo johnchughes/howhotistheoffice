@@ -12,26 +12,31 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding:5vmin;
 
   &.chart-section {
     justify-content: end;
     background: #282c34;
   }
+
+
 }
 
 .climate {
   /* background-color: #282c34; */
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 
   &> h1 {
     color:#282c34;
+    flex-grow: 1;
+    padding:0;
+    margin:0;
   }
 
   .temperature {
@@ -46,6 +51,33 @@ section {
     h1 {
       color:#ffffff;
     }
+  }
+  
+}
+
+.today {
+  width:100%;
+  color:#282c34;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:0;
+    margin:0;
+
+    li {
+      padding:0;
+      margin:0;
+      width: 4%;
+      align-self: flex-end;
+    }
+
   }
   
 }
