@@ -34,7 +34,8 @@ section {
   .title {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    height:33vh;
+    
 
     h1 {
       color:#282c34;
@@ -43,20 +44,35 @@ section {
     }
   }
 
-  .temperature {
+  .temp-wrapper {
     display: flex;
-    flex-grow: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 25vmax;
-    height:25vmax;
+    height:34vh;
 
-    h1 {
-      color:#ffffff;
+    .temperature {
+      display: flex;
+      flex-grow: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 25vmax;
+      height:25vmax;
+      
+
+      h1 {
+        padding:0;
+        margin:0;
+        color:#ffffff;
+      }
+
+      span {
+        font-size:12px;
+        opacity:0.7;
+        
+      }
     }
-  }
+  } 
 
   .today {
     width:100%;
@@ -65,7 +81,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-  
+    height:33vh;
     ul {
       list-style: none;
       display: flex;
@@ -73,7 +89,7 @@ section {
       padding:0;
       margin:0;
       width: 100%;
-  
+      height: 100%;
       li {
         padding:0;
         margin:0;
