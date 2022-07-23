@@ -1,6 +1,7 @@
 import './App.scss';
 import { useEffect, useState } from 'react';
 import TodaysTemperatures from './TodaysTemperatures';
+import Weather from './Weather';
 
 function App() {
 
@@ -59,21 +60,19 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <main>
       {/* <input type="number" onChange={onChange} /> */}
-      <section className='climate' >
-        <div className='title'>
-          <h1>&nbsp;</h1>
-        </div>
+      <section className='App' >
+          <Weather></Weather>
         <div className='temp-wrapper'>
           <div className='temperature' style={{ backgroundColor: colour }}>
-            <h1>{Math.round(reading.temperature * 10) / 10}&#8451;</h1>
+            <h1>{Math.round(reading.temperature * 10) / 10}<sup>&#8451;</sup></h1>
             <span>{FormatTimeStamp(reading.temperatureTimeStamp)}</span>
           </div>
         </div>
         <TodaysTemperatures onColourPick={getColourForTemperature} />
       </section>
-    </div>
+      </main>
   );
 }
 

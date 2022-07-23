@@ -1,28 +1,4 @@
 .App {
-  display:flex;
-  flex-direction: column;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  &.chart-section {
-    justify-content: end;
-    background: #282c34;
-  }
-
-
-}
-
-.climate {
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column; 
@@ -31,13 +7,32 @@ section {
   font-size: calc(10px + 2vmin);
   color: white;
   
-  .title {
+
+  section {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
 
+    &.chart-section {
+      justify-content: end;
+      background: #282c34;
+    }
+
+
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: column;
+    color:#282c34;
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
     h1 {
-      color:#282c34;
       padding:0;
       margin:0;
     }
@@ -55,6 +50,7 @@ section {
       align-items: center;
       justify-content: center;
       border-radius: 50%;
+      border:1px solid #ffffff;
       width: 25vmax;
       height:25vmax;
       
@@ -66,8 +62,8 @@ section {
       }
 
       span {
-        font-size:0.5rem;
-        opacity:0.7;
+        font-size:0.6rem;
+        opacity:0.6;
         
       }
     }
@@ -94,6 +90,14 @@ section {
         border-left: 1px solid white;
         border-right:1px solid white;
         align-self: flex-end;
+
+        &:first-of-type {
+          border-left:2px solid white;
+        }
+
+        &:last-of-type {
+          border-right: 2px solid white;
+        }
       }
   
     }
