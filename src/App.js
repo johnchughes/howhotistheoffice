@@ -66,8 +66,9 @@ function App() {
           <Weather></Weather>
         <div className='temp-wrapper'>
           <div className='temperature' style={{ backgroundColor: colour }}>
+            <h2>current office temp</h2>
             <h1>{Math.round(reading.temperature * 10) / 10}<sup>&#8451;</sup></h1>
-            <span>{FormatTimeStamp(reading.temperatureTimeStamp)}</span>
+            <p>{FormatTimeStamp(reading.temperatureTimeStamp)}</p>
           </div>
         </div>
         <TodaysTemperatures onColourPick={getColourForTemperature} />
