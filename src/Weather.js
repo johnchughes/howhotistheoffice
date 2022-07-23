@@ -6,7 +6,7 @@ const Weather = () => {
     const [weather, setWeather] = useState(null);
 
     const getWeatherInfo = () => {
-        fetch('http://api.weatherapi.com/v1/current.json?key=59ce82749814495eb69135116222007&q=GL2 4LD&aqi=no')
+        fetch('https://api.weatherapi.com/v1/current.json?key=59ce82749814495eb69135116222007&q=GL2 4LD&aqi=no')
         .then(response => response.json())
         .then(data => setWeather(data));
     }
