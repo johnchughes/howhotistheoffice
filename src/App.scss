@@ -108,6 +108,22 @@
         &:last-of-type {
           border-right: 2px solid white;
         }
+
+        .colour-dot{
+          width: 0.8vw;
+          height: 0.8vw;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 0.7rem;
+          text-align: center;
+          opacity: 0.7;
+        }
+
       }
   
     }
@@ -116,3 +132,11 @@
   
 }
 
+@media screen and (max-width: 1000px) {
+  .today {
+
+    p {
+      display: none;
+    }
+  }
+}
