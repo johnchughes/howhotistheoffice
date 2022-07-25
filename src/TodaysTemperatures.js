@@ -30,7 +30,10 @@ const TodaysTemperatures = ({onColourPick}) => {
         const liHeight = x.temperature +"vh";
         const liWidth = ((width/24)-2) + "px";
         const colour = onColourPick(x.temperature);
-        return <li key={i} style={{height: liHeight, width: liWidth, backgroundColor: colour}}></li>
+        return <li key={i} style={{height: liHeight, width: liWidth}}>
+            <div className='colour-dot' style={{ backgroundColor: colour}}></div>
+            <p>{x.temperature}<sup>&#8451;</sup></p>
+        </li>
       });
     
 
