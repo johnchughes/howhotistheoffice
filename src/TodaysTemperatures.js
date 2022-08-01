@@ -9,8 +9,10 @@ const TodaysTemperatures = ({onColourPick}) => {
 
     useEffect(() => {
 
+
         const today = new Date();
-        const dateString = today.getFullYear() + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate();
+        const dateString = today.getFullYear() + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + (today.getDate() + "").padStart(2, "0");
+        console.log(dateString);
         fetch('https://fn-temps.azurewebsites.net/api/TempsForDay?code=YxXpJgCmX6bnkVNXWN78CtErhAcb8I_4_6btELeCh1iYAzFuYnycaQ==&date='+dateString)
             .then(response => response.json())
             .then(result => setData(result));
