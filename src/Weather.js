@@ -13,11 +13,11 @@ const Weather = () => {
     
     useEffect(() => {
         getWeatherInfo();
-    }, []); 
+    }, []);
 
     if(weather == null){
         return <div></div>
-    }
+    }                                                                   
 
     return (
         <div className="weather">
