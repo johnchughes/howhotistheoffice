@@ -1,8 +1,4 @@
 import './App.scss';
-import { useEffect, useState } from 'react';
-import TodaysTemperatures from './TodaysTemperatures';
-import Weather from './Weather';
-
 
 function App() {
 
